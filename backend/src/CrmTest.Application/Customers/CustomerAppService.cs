@@ -42,9 +42,11 @@ namespace CrmTest.Customers
                 .WhereIf(!input.Keyword.IsNullOrWhiteSpace(), x =>
                     x.Id.ToString().Contains(input.Keyword) ||
                     (x.Name != null && x.Name.Contains(input.Keyword)) ||
-                    (x.Email != null && x.Email.Contains(input.Keyword)))
+                    (x.Email != null && x.Email.Contains(input.Keyword)) ||
+                    (x.Phone != null && x.Phone.Contains(input.Keyword)))
                 .WhereIf(!input.Name.IsNullOrWhiteSpace(), x => x.Name != null && x.Name.Contains(input.Name))
                 .WhereIf(!input.Email.IsNullOrWhiteSpace(), x => x.Email != null && x.Email.Contains(input.Email))
+                .WhereIf(!input.Phone.IsNullOrWhiteSpace(), x => x.Phone != null && x.Phone.Contains(input.Phone))
                 .WhereIf(input.IsActive.HasValue, x => x.IsActive == input.IsActive.Value);
         }
         /// <summary>

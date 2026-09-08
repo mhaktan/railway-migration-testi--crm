@@ -4,5 +4,6 @@ namespace CrmTest.Entities
     {
         public const int MaxNameLength = 200;
         public const int MaxEmailLength = 256;
+        public const int MaxPhoneLength = 50;
     }
 }

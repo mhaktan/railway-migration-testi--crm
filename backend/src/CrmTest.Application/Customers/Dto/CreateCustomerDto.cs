@@ -16,5 +16,8 @@ namespace CrmTest.Customers.Dto
 
         public bool IsActive { get; set; }
 
+        [MaxLength(50)]
+        public string Phone { get; set; }
+
     }
 }

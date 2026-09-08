@@ -19,6 +19,9 @@ namespace CrmTest.Entities
 
         public bool IsActive { get; set; }
 
+        [MaxLength(50)]
+        public string Phone { get; set; }
+
         public virtual ICollection<Note> Notes { get; set; }
 
     }

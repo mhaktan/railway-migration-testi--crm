@@ -9,6 +9,7 @@ type CustomerRecord = {
   name: string;
   email?: string;
   isActive: boolean;
+  phone?: string;
 };
 
 interface CustomerCreateProps {
@@ -50,6 +51,9 @@ export const CustomerCreate: React.FC<CustomerCreateProps> = ({ open, onClose, o
                     <input type="checkbox" checked={!!form.isActive} onChange={(e) => ((v) => setField('isActive', v))(e.target.checked)} style={{ width: 16, height: 16 }} />
                     Is Active *
                   </label>
+                </div>
+                <div>
+                  <TkInput mode="text" label="Phone" value={String(form.phone ?? '')} onTkChange={(e: CustomEvent) => ((v) => setField('phone', v))(e.detail)} />
                 </div>
             </div>
           </div>

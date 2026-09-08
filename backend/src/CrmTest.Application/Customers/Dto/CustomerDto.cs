@@ -13,6 +13,8 @@ namespace CrmTest.Customers.Dto
 
         public bool IsActive { get; set; }
 
+        public string Phone { get; set; }
+
         public DateTime CreationTime { get; set; }
 
         public DateTime? LastModificationTime { get; set; }
