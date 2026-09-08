@@ -43,10 +43,12 @@ namespace CrmTest.Customers
                     x.Id.ToString().Contains(input.Keyword) ||
                     (x.Name != null && x.Name.Contains(input.Keyword)) ||
                     (x.Email != null && x.Email.Contains(input.Keyword)) ||
-                    (x.Phone != null && x.Phone.Contains(input.Keyword)))
+                    (x.Phone != null && x.Phone.Contains(input.Keyword)) ||
+                    (x.City != null && x.City.Contains(input.Keyword)))
                 .WhereIf(!input.Name.IsNullOrWhiteSpace(), x => x.Name != null && x.Name.Contains(input.Name))
                 .WhereIf(!input.Email.IsNullOrWhiteSpace(), x => x.Email != null && x.Email.Contains(input.Email))
                 .WhereIf(!input.Phone.IsNullOrWhiteSpace(), x => x.Phone != null && x.Phone.Contains(input.Phone))
+                .WhereIf(!input.City.IsNullOrWhiteSpace(), x => x.City != null && x.City.Contains(input.City))
                 .WhereIf(input.IsActive.HasValue, x => x.IsActive == input.IsActive.Value);
         }
         /// <summary>

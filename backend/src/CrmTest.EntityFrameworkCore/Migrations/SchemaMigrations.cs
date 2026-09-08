@@ -25,9 +25,9 @@ namespace CrmTest.EntityFrameworkCore.Migrations
 
         private static readonly List<Migration> All = new List<Migration>
         {
-            new Migration(@"20260908145333", @"sema-guncelleme", @"-- Migration 20260908145333 — sema-guncelleme
+            new Migration(@"20260908150156", @"sema-guncelleme", @"-- Migration 20260908150156 — sema-guncelleme
 -- Provider: postgresql
-ALTER TABLE ""Customers"" ADD COLUMN ""Phone"" varchar(50) NULL;
+ALTER TABLE ""Customers"" ADD COLUMN ""City"" varchar(100) NULL;
 "),
         };
 

@@ -22,6 +22,9 @@ namespace CrmTest.Entities
         [MaxLength(50)]
         public string Phone { get; set; }
 
+        [MaxLength(100)]
+        public string City { get; set; }
+
         public virtual ICollection<Note> Notes { get; set; }
 
     }

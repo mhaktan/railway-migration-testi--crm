@@ -19,6 +19,7 @@ type CustomerRecord = {
   email?: string;
   isActive: boolean;
   phone?: string;
+  city?: string;
   [key: string]: unknown;
 };
 
@@ -48,6 +49,7 @@ const COLUMNS: TableColumn[] = [
   { field: 'email', header: "Email", sortable: true, searchable: true, filterType: 'text' },
   { field: 'isActive', header: "Is Active", sortable: true, filterType: 'checkbox', filterOptions: [{ label: 'Yes', value: 'true' }, { label: 'No', value: 'false' }], html: (row: Record<string, unknown>) => row.isActive ? '<span style="color:#2e7d32;font-weight:600">Yes</span>' : '<span style="color:#999">No</span>' },
   { field: 'phone', header: "Phone", sortable: true, searchable: true, filterType: 'text' },
+  { field: 'city', header: "City", sortable: true, searchable: true, filterType: 'text' },
 ];
 
 // ---------------------------------------------------------------------------

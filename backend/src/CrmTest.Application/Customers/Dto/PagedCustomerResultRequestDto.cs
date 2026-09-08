@@ -10,5 +10,6 @@ namespace CrmTest.Customers.Dto
         public string Email { get; set; }
         public bool? IsActive { get; set; }
         public string Phone { get; set; }
+        public string City { get; set; }
     }
 }

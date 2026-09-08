@@ -15,6 +15,8 @@ namespace CrmTest.Customers.Dto
 
         public string Phone { get; set; }
 
+        public string City { get; set; }
+
         public DateTime CreationTime { get; set; }
 
         public DateTime? LastModificationTime { get; set; }

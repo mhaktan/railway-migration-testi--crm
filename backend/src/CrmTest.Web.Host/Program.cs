@@ -48,7 +48,7 @@ namespace CrmTest.Web.Host
                         // Dolu veritabaninda hicbir sey yapmaz — o durumda bekleyen migration'lar
                         // SchemaMigrations.Apply icinde sirayla calistirilir.
                         var freshlyCreated = db.Database.EnsureCreated();
-                        Console.WriteLine("[Migration] Migration tanimi yok — sema EnsureCreated ile yonetiliyor.");
+                        CrmTest.EntityFrameworkCore.Migrations.SchemaMigrations.Apply(db, freshlyCreated);
                         Console.WriteLine("[Migration] Database is up to date.");
 
                         // Seed sample data — wrapped in its own try so a failure here doesn't block RBAC seed below.
@@ -57,8 +57,8 @@ namespace CrmTest.Web.Host
                     if (!db.Customers.Any())
                     {
                         db.Customers.AddRange(
-                    new Customer { Id = 1, Name = "Alice Johnson", Email = "alice@example.com", IsActive = true, Phone = "+1-555-0101" },
-                    new Customer { Id = 2, Name = "Bob Smith", Email = "bob@example.com", IsActive = false, Phone = "+1-555-0102" }
+                    new Customer { Id = 1, Name = "Alice Johnson", Email = "alice@example.com", IsActive = true, Phone = "+1-555-0101", City = "New York" },
+                    new Customer { Id = 2, Name = "Bob Smith", Email = "bob@example.com", IsActive = false, Phone = "+1-555-0102", City = "London" }
                         );
                     }
                     if (!db.Notes.Any())
